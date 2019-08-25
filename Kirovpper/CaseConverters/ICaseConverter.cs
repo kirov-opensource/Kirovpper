@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kirovpper.CaseConverter {
+namespace Kirovpper.CaseConverters {
   /// <summary>
   /// CaseStyleConverter
   /// </summary>

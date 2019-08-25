@@ -1,12 +1,14 @@
 ﻿using Kirovpper.Mapper;
 using Kirovpper.Tests.Entities;
+using Kirovpper.Tests.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Kirovpper.Tests.ViewModels {
-  public class FooViewModel : IMapper<Foo, FooViewModel>, IMapper<Foo1, FooViewModel> {
+  public class FooViewModel : IMapper<Foo, FooViewModel> {
     public string Foo { get; set; }
+    public Status Status { get; set; }
     public string Bar { get; set; }
 
     FooViewModel IMapper<Foo, FooViewModel>.Convert(Foo fromObject, IServiceProvider serviceProvider) {
@@ -19,12 +21,5 @@ namespace Kirovpper.Tests.ViewModels {
       throw new NotImplementedException();
     }
 
-    FooViewModel IMapper<Foo1, FooViewModel>.Convert(Foo1 fromObject, IServiceProvider serviceProvider) {
-      throw new NotImplementedException();
-    }
-
-    IEnumerable<FooViewModel> IMapper<Foo1, FooViewModel>.Convert(IEnumerable<Foo1> fromObjects, IServiceProvider serviceProvider) {
-      throw new NotImplementedException();
-    }
   }
 }

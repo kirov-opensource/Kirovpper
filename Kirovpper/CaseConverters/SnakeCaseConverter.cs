@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kirovpper.CaseConverter {
-  public class CamelCaseConverter : ICaseConverter {
+namespace Kirovpper.CaseConverters {
+  public class SnakeCaseConverter : ICaseConverter {
     public string Convert(string rawString) {
-      return rawString.ToCamelCase();
+      return rawString.ToSnakeCase();
     }
   }
 }

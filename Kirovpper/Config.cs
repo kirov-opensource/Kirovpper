@@ -1,4 +1,4 @@
-﻿using Kirovpper.CaseConverter;
+﻿using Kirovpper.CaseConverters;
 using Kirovpper.Enums;
 using System;
 using System.Collections.Concurrent;
@@ -40,7 +40,7 @@ namespace Kirovpper {
     /// <summary>
     /// 类型转换映射表
     /// </summary>
-    public static IDictionary<(Type, Type), IEnumerable<IGrouping<PropertyInfo, PropertyInfo>>> MappingDictionary = new ConcurrentDictionary<(Type, Type), IEnumerable<IGrouping<PropertyInfo, PropertyInfo>>>();
+    public static IDictionary<(Type, Type), IEnumerable<IGrouping<PropertyInfo, PropertyInfo>>> DefaultMapperMappingDictionary = new ConcurrentDictionary<(Type, Type), IEnumerable<IGrouping<PropertyInfo, PropertyInfo>>>();
     /// <summary>
     /// Case converters
     /// </summary>

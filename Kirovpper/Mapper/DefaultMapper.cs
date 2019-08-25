@@ -11,10 +11,10 @@ namespace Kirovpper.Mapper {
      where FromType : class, new() where ToType : class, new() {
     public virtual async Task<IEnumerable<IGrouping<PropertyInfo, PropertyInfo>>> GetMappingInfo(IServiceProvider serviceProvider) {
       IEnumerable<IGrouping<PropertyInfo, PropertyInfo>> mappingInfo;
-      if (!Config.MappingDictionary.ContainsKey((typeof(ToType), typeof(FromType)))) {
+      if (!Config.DefaultMapperMappingDictionary.ContainsKey((typeof(ToType), typeof(FromType)))) {
         await GenerateMappingDictionary(serviceProvider);
       }
-      mappingInfo = Config.MappingDictionary[(typeof(FromType), typeof(ToType))];
+      mappingInfo = Config.DefaultMapperMappingDictionary[(typeof(FromType), typeof(ToType))];
       return mappingInfo;
     }
     /// <summary>
@@ -29,7 +29,7 @@ namespace Kirovpper.Mapper {
 
       var toPropertyMappings = propertyMappings;
 
-      Config.MappingDictionary[(typeof(FromType), typeof(ToType))] = toPropertyMappings;
+      Config.DefaultMapperMappingDictionary[(typeof(FromType), typeof(ToType))] = toPropertyMappings;
     }
     /// <summary>
     /// 生成一个属性的映射关系
